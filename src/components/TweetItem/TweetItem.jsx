@@ -9,7 +9,7 @@ import {
   StyledPTweets,
   StyledUpperDiv,
 } from "./Tweet.styled";
-import logo from '../../assets/react.svg';
+import logo from '../../assets/logo.png';
 import MyButton from "../UI/Button/MyButton";
 
 export const Tweet = ({}) => {
