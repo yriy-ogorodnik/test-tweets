@@ -18,7 +18,7 @@ export const Tweet = ({}) => {
       <StyledCardContent>
         <StyledUpperDiv>
           <StyledLogo
-            src={logo}
+            src={`${logo}`}
             alt="logo"
             width={76}
           />
