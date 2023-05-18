@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bg from "/src/img/picture.png";
+import bg from "/img/picture.png";
 
 export const StyledCard = styled.li`
   box-sizing: border-box;
