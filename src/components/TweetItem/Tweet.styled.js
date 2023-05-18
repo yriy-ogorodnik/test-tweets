@@ -1,6 +1,6 @@
 
 import styled from 'styled-components';
-import bg from 'img/picture.png';
+import bg from '../../img/picture.png';
 
 
 export const StyledCard = styled.li`

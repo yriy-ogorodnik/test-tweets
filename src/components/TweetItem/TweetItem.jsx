@@ -34,7 +34,7 @@ export const Tweet = ({  }) => {
               followers
            </StyledPFollowers>
          
-         <MyButton children="Follow" />
+         <MyButton  />
          </StyledBottomDiv>
        </StyledCardContent>
      </StyledCard>
