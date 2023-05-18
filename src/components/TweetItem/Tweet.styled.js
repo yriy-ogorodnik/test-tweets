@@ -1,7 +1,5 @@
-
-import styled from 'styled-components';
-import bg from './../../img/picture.png';
-
+import styled from "styled-components";
+import bg from "/src/img/picture.png";
 
 export const StyledCard = styled.li`
   box-sizing: border-box;
@@ -28,7 +26,7 @@ export const StyledCard = styled.li`
     display: block;
     position: absolute;
     top: 214px;
-    content: '';
+    content: "";
     width: 100%;
     height: 8px;
     background: #ebd8ff;
@@ -142,7 +140,6 @@ export const Button = styled.button`
 `;
 
 export const ActiveButton = styled.button`
-  
   display: block;
   width: 196px;
   height: 50px;
