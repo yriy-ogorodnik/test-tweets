@@ -1,6 +1,5 @@
 import {
-   ActiveButton,
-   Button,
+   
    StyledAvatar,
    StyledAvatarWrap,
    StyledBottomDiv,
@@ -15,7 +14,7 @@ import {
 import MyButton from '../UI/Button/MyButton';
 
 
-export const Tweet = ({ tweet }) => {
+export const Tweet = ({  }) => {
 
 
 
