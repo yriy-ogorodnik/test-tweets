@@ -2,13 +2,17 @@
 import "./App.css";
 import FilterSelect from "./components/StatusFilter/StatusFilter";
 
-import { Tweet } from "./components/TweetItem/TweetItem";
+
+import { TweetList } from "./components/TweetList/TweetList";
 
 function App() {
   return (
     <>
     <FilterSelect/>
-      <Tweet />
+     
+     <TweetList/>
+     
+     
     </>
   );
 }

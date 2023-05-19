@@ -3,6 +3,8 @@ import classes from './MyButton.module.css';
 
 const MyButton = ({ children, ...props }) => {
   const [isFollowing, setIsFollowing] = useState(false);
+
+  
   const handleClick = () => {
     setIsFollowing(!isFollowing);
   };

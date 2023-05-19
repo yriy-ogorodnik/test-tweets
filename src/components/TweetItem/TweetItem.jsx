@@ -12,7 +12,8 @@ import {
 import logo from '../../assets/logo.png';
 import MyButton from "../UI/Button/MyButton";
 
-export const Tweet = ({}) => {
+export const TweetItem = ({tweet}) => {
+  
   return (
     <StyledCard>
       <StyledCardContent>
@@ -24,11 +25,11 @@ export const Tweet = ({}) => {
           />
         </StyledUpperDiv>
         <StyledAvatarWrap>
-          <StyledAvatar />
+          <StyledAvatar src={tweet.avatar} alt={tweet.user} width={62} />
         </StyledAvatarWrap>
         <StyledBottomDiv>
-          <StyledPTweets>tweets</StyledPTweets>
-          <StyledPFollowers>followers</StyledPFollowers>
+          <StyledPTweets> {tweet.tweets} tweets</StyledPTweets>
+          <StyledPFollowers>{tweet.followers} followers</StyledPFollowers>
 
           <MyButton children="Follow" />
         </StyledBottomDiv>
