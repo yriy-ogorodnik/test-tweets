@@ -31,6 +31,7 @@ export default function FilterSelect() {
   return (
     <div className="Select">
       <StyledSelect
+       classNamePrefix="select"
         defaultValue={options[0]}
         onChange={handleFilterChange}
         options={options}
