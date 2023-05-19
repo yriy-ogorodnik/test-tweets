@@ -1,27 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 import {
   addFollower,
   deleteFollower,
   fetchTweets,
   fetchTweetsByPage,
-} from './operations';
+} from "./operations";
 
- const handlePending = state => {
+const handlePending = state => {
   state.isLoading = true;
 };
 
- const handleRejected = (state, action) => {
+const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };
 
- const handleFulfilled = (state, action) => {
+const handleFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
   state.items = action.payload;
 };
 
- const handleFulfilledAdd = (state, action) => {
+const handleFulfilledAdd = (state, action) => {
   state.isLoading = false;
   state.error = null;
 
@@ -29,7 +29,7 @@ import {
   state.items.splice(index, 1, action.payload);
 };
 
- const handleFulfilledDelete = (state, action) => {
+const handleFulfilledDelete = (state, action) => {
   state.isLoading = false;
   state.error = null;
   const index = state.items.findIndex(tweet => tweet.id === action.payload.id);
@@ -44,7 +44,7 @@ const tweetsInitialState = {
 };
 
 const tweetsSlice = createSlice({
-  name: 'tweets',
+  name: "tweets",
   initialState: tweetsInitialState,
   reducers: {
     changeLimit: (state, action) => {

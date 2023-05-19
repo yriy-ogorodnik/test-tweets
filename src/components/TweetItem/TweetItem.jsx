@@ -9,11 +9,10 @@ import {
   StyledPTweets,
   StyledUpperDiv,
 } from "./Tweet.styled";
-import logo from '../../assets/logo.png';
+import logo from "../../assets/logo.png";
 import MyButton from "../UI/Button/MyButton";
 
-export const TweetItem = ({tweet}) => {
-  
+export const TweetItem = ({ tweet }) => {
   return (
     <StyledCard>
       <StyledCardContent>
@@ -25,13 +24,17 @@ export const TweetItem = ({tweet}) => {
           />
         </StyledUpperDiv>
         <StyledAvatarWrap>
-          <StyledAvatar src={tweet.avatar} alt={tweet.user} width={62} />
+          <StyledAvatar
+            src={tweet.avatar}
+            alt={tweet.user}
+            width={62}
+          />
         </StyledAvatarWrap>
         <StyledBottomDiv>
           <StyledPTweets> {tweet.tweets} tweets</StyledPTweets>
           <StyledPFollowers>{tweet.followers} followers</StyledPFollowers>
 
-          <MyButton children="Follow" />
+          <MyButton tweet={tweet} />
         </StyledBottomDiv>
       </StyledCardContent>
     </StyledCard>

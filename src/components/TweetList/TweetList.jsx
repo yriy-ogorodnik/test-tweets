@@ -1,18 +1,18 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import {
   getStatusFilter,
   getFollowings,
   getIsLoading,
   getLimit,
-} from '../../redux/selectors';
-import { statusFilters } from '../../redux/constants';
-import { TweetItem } from '../TweetItem/TweetItem';
-import { useEffect } from 'react';
-import { fetchTweetsByPage, fetchTweets } from '../../redux/operations';
-import { Container, StyledWrapper } from './TweetList.styled';
-import { Button } from '../TweetItem/Tweet.styled';
+} from "../../redux/selectors";
+import { statusFilters } from "../../redux/constants";
+import { TweetItem } from "../TweetItem/TweetItem";
+import { useEffect } from "react";
+import { fetchTweetsByPage } from "../../redux/operations";
+import { Container, StyledWrapper } from "./TweetList.styled";
+import { Button } from "../TweetItem/Tweet.styled";
 // import Loader from 'components/Loader/Loader';
-import { changeLimit } from '../../redux/tweetsSlice';
+import { changeLimit } from "../../redux/tweetsSlice";
 
 const getVisibleTweets = (tweets, following, unfollowed, statusFilter) => {
   switch (statusFilter) {
@@ -31,14 +31,12 @@ export const TweetList = () => {
   const limit = useSelector(getLimit);
   const statusFilter = useSelector(getStatusFilter);
 
-
   const visibleTweets = getVisibleTweets(
     tweets,
     followings,
     unfollowed,
     statusFilter
   );
-
 
   const dispatch = useDispatch();
 
@@ -57,14 +55,16 @@ export const TweetList = () => {
     <>
       <Container>
         {visibleTweets.map(tweet => (
-          <TweetItem key={tweet.id} tweet={tweet} />
+          <TweetItem
+            key={tweet.id}
+            tweet={tweet}
+          />
         ))}
       </Container>
       <StyledWrapper>
         {shouldShow && !isLoading && (
           <Button onClick={handleLoadMoreClick}>Load more</Button>
         )}
-       
       </StyledWrapper>
     </>
   );

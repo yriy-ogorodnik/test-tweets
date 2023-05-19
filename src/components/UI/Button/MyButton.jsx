@@ -1,24 +1,32 @@
-import React, { useState } from 'react';
-import classes from './MyButton.module.css';
+import classes from "./MyButton.module.css";
+import { useDispatch } from "react-redux";
+import { addFollower, deleteFollower } from "../../../redux/operations";
 
-const MyButton = ({ children, ...props }) => {
-  const [isFollowing, setIsFollowing] = useState(false);
+const MyButton = ({ tweet }) => {
+  const isFollowing = tweet.following;
 
-  
+  const dispatch = useDispatch();
+
   const handleClick = () => {
-    setIsFollowing(!isFollowing);
+    if (isFollowing) {
+      dispatch(deleteFollower(tweet));
+    } else {
+      dispatch(addFollower(tweet));
+    }
   };
 
+  const buttonLabel = isFollowing ? "Following" : "Follow";
+  const buttonColor = !isFollowing ? "#EBD8FF" : "#5CD3A8";
 
   return (
-  
-  <button
-      {...props}
-      className={`${classes.myBtn} ${isFollowing ? classes.following : ''}`}
+    <button
+      style={{ backgroundColor: buttonColor }}
+      className={`${classes.myBtn} `}
       onClick={handleClick}
     >
-      {isFollowing ? 'Following' : children}
+      {buttonLabel}
     </button>
-)};
+  );
+};
 
 export default MyButton;
