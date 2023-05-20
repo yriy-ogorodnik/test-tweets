@@ -11,6 +11,7 @@ import {
 } from "./Tweet.styled";
 import logo from "../../assets/logo.png";
 import MyButton from "../UI/Button/MyButton";
+import NumberDisplay from "../UI/NumberDisplay/NumberDisplay";
 
 export const TweetItem = ({ tweet }) => {
   return (
@@ -32,7 +33,7 @@ export const TweetItem = ({ tweet }) => {
         </StyledAvatarWrap>
         <StyledBottomDiv>
           <StyledPTweets> {tweet.tweets} tweets</StyledPTweets>
-          <StyledPFollowers>{tweet.followers} followers</StyledPFollowers>
+          <StyledPFollowers> <NumberDisplay number={tweet.followers} /> followers</StyledPFollowers>
 
           <MyButton tweet={tweet} />
         </StyledBottomDiv>
