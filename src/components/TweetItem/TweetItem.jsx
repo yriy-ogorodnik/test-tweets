@@ -33,7 +33,10 @@ export const TweetItem = ({ tweet }) => {
         </StyledAvatarWrap>
         <StyledBottomDiv>
           <StyledPTweets> {tweet.tweets} tweets</StyledPTweets>
-          <StyledPFollowers> <NumberDisplay number={tweet.followers} /> followers</StyledPFollowers>
+          <StyledPFollowers>
+            {" "}
+            <NumberDisplay number={tweet.followers} /> followers
+          </StyledPFollowers>
 
           <MyButton tweet={tweet} />
         </StyledBottomDiv>

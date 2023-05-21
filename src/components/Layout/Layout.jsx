@@ -1,5 +1,7 @@
 import { Suspense } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import {  Header, Main, Nav, NavLinkSt } from './Layout.styled';
+
 
 
 const Layout = () => {
@@ -7,26 +9,26 @@ const Layout = () => {
   const from = location?.state?.from ?? '/';
   return (
     <>
-      <header>
-        <nav>
+      <Header>
+        <Nav>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLinkSt to="/">Home</NavLinkSt>
             </li>
             <li>
-              <NavLink to="/tweets" state={{ from: from }}>
+              <NavLinkSt to="/tweets" state={{ from: from }}>
                 Tweets
-              </NavLink>
+              </NavLinkSt>
             </li>
           </ul>
-        </nav>
-      </header>
+        </Nav>
+      </Header>
       <div>
-        <main>
+        <Main>
           <Suspense fallback={<div>Loading...</div>}>
             <Outlet />
           </Suspense>
-        </main>
+        </Main>
         <footer></footer>
       </div>
     </>
