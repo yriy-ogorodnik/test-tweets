@@ -13,7 +13,7 @@ const options = [
   { value: "following", label: "Following" },
 ];
 
-export default function FilterSelect() {
+export default function StatusFilter() {
   const dispatch = useDispatch();
   const limit = useSelector(getLimit);
 

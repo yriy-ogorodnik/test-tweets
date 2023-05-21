@@ -17,32 +17,34 @@ import { TweetList } from "./components/TweetList/TweetList";
 // export default App;
 // ____________________________
 
-import { Routes, Route, Link, HashRouter } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import TweetsPage from "./page/Tweets/TweetsPage";
+import Home from "./page/Home/Home";
+import Layout from "./components/Layout/Layout";
+
 
 function App() {
   return (
-    <HashRouter basename={import.meta.env.DEV ? "/" : "/test-tweets/"}>
-      <Routes>
+    <Routes>
+      <Route
+        path="/"
+        element={<Layout/>}
+      >
         <Route
-          path="/"
-          element={
-            <div>
-              <h1>Hello World</h1>
-              <Link to="about">About Us</Link>
-            </div>
-          }
+          index
+          element={<Home/>}
         />
         <Route
-          path="/about"
-          element={
-            <div>
-              <TweetList />
-            </div>
-          }
+          path="tweets"
+          element={<TweetsPage/>}
         />
-      </Routes>
-    </HashRouter>
+        <Route
+          path="*"
+          element={<div>NotFound</div>}
+        />
+      </Route>
+    </Routes>
   );
 }
 
