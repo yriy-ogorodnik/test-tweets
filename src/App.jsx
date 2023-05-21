@@ -17,12 +17,12 @@ import { TweetList } from "./components/TweetList/TweetList";
 // export default App;
 // ____________________________
 
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, HashRouter } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.DEV ? "/" : "/test-tweets/"}>
+    <HashRouter basename={import.meta.env.DEV ? "/" : "/test-tweets/"}>
       <Routes>
         <Route
           path="/"
@@ -42,7 +42,7 @@ function App() {
           }
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
